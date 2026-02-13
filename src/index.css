@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --color-brand-primary: #004a8c;
+  --color-brand-secondary: #fecb00;
+  --color-brand-accent: #003a6e;
+  --color-brand-surface: #ffffff;
+  --color-brand-muted: #64748b;
+  --color-brand-dark: #002e54;
+
+  --font-serif: "Crimson Text", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-bounce-slow: bounce 3s infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+
+  --shadow-glass: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --shadow-glass-hover: 0 20px 50px rgba(30, 41, 59, 0.08);
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes wiggle {
+
+    0%,
+    100% {
+      transform: rotate(-1deg);
+    }
+
+    50% {
+      transform: rotate(1deg);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-0.5rem);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      transform: translateY(0.5rem);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light;
+  color: var(--color-brand-primary);
+  background-color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  @apply bg-slate-50 text-slate-800 selection:bg-blue-100 selection:text-blue-900;
+}
+
+@layer components {
+  .dashboard-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-8 py-10;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl rounded-3xl shadow-glass border border-white/40 p-8 transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply shadow-glass-hover -translate-y-1;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-primary via-brand-dark to-brand-primary bg-clip-text text-transparent font-black;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3.5 bg-brand-primary text-white font-bold rounded-2xl shadow-lg border-2 border-brand-primary hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-secondary hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3.5 bg-brand-secondary text-brand-primary font-bold rounded-2xl shadow-md border-2 border-brand-secondary hover:bg-brand-primary hover:text-white hover:border-brand-primary hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2;
+  }
+
+  .input-field {
+    @apply w-full p-4 border-2 border-slate-100 rounded-2xl focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5 focus:outline-none transition-all font-semibold bg-white/50 backdrop-blur-sm placeholder:text-slate-400;
+  }
+
+  .label-text {
+    @apply block text-slate-600 font-bold mb-2.5 text-sm uppercase tracking-wider;
+  }
+
+  .custom-table-container {
+    @apply overflow-hidden rounded-3xl border border-slate-100 bg-white/50 backdrop-blur-sm shadow-sm;
+  }
+
+  .custom-table {
+    @apply w-full text-left border-collapse;
+  }
+
+  .custom-table th {
+    @apply p-4 font-black text-slate-500 bg-slate-50/50 border-b border-slate-100 text-xs uppercase tracking-widest;
+  }
+
+  .custom-table td {
+    @apply p-5 border-b border-slate-50 text-slate-700 font-medium;
+  }
+
+  .custom-table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .animate-in {
+    animation-duration: 600ms;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+  }
+
+  .slide-in-from-top-4 {
+    animation-name: slideInFromTop;
+  }
+
+  .slide-in-from-bottom-4 {
+    animation-name: slideInFromBottom;
+  }
+}
+
+h1 {
+  @apply tracking-tight leading-none;
+}
+
+button {
+  @apply cursor-pointer;
+}
