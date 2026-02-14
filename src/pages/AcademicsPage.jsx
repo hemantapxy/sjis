@@ -84,7 +84,7 @@ const AcademicsPage = () => {
                                 <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400" alt="Learning" className="w-full h-full object-cover" />
                             </div>
                             <div className="aspect-square bg-slate-200 rounded-3xl overflow-hidden shadow-xl mt-12">
-                                <img src="https://images.unsplash.com/photo-1427501748790-687e33027ab5?auto=format&fit=crop&w=400" alt="Library" className="w-full h-full object-cover" />
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbshzfOCPHI0ikI_7RwdNNHH6mVZGoaTS8vQ&s" alt="Library" className="w-full h-full object-cover" />
                             </div>
                         </div>
                     </div>
