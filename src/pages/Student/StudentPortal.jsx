@@ -184,7 +184,7 @@ const StudentPortal = () => {
             <button
               key={tab.id}
               onClick={() => {
-                if (tab.path) window.location.href = tab.path;
+                if (tab.path) navigate(tab.path);
                 else setActiveTab(tab.id);
               }}
               className={`flex-1 min-w-[200px] py-4 px-6 rounded-2xl font-black transition-all duration-300 ${activeTab === tab.id

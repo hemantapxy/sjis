@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { teacherAPI, authAPI, BASE_URL } from '../../services/api';
 import DashboardLayout from '../../components/Layout/DashboardLayout';
 import { CLASSES, SUBJECTS } from '../../utils/constants';
@@ -18,6 +19,7 @@ const SESSION_OPTIONS = [
 ];
 
 const TeacherDashboard = () => {
+  const navigate = useNavigate();
   const [students, setStudents] = useState([]);
   const [branches, setBranches] = useState([]);
   const [academicYears, setAcademicYears] = useState([]);
@@ -459,7 +461,7 @@ const TeacherDashboard = () => {
               <button
                 key={tab.id}
                 onClick={() => {
-                  if (tab.id === 'timetable') window.location.href = tab.path;
+                  if (tab.path) navigate(tab.path);
                   else setActiveTab(tab.id);
                 }}
                 className={`flex-1 min-w-[200px] py-4 px-6 rounded-2xl font-black transition-all duration-300 ${activeTab === tab.id
@@ -1162,7 +1164,8 @@ const TeacherDashboard = () => {
             </div>
           )}
         </div>
-      )}
+      )
+      }
     </DashboardLayout >
   );
 };
