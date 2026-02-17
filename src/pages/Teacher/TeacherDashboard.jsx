@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { teacherAPI, authAPI } from '../../services/api';
+import { teacherAPI, authAPI, BASE_URL } from '../../services/api';
 import DashboardLayout from '../../components/Layout/DashboardLayout';
 import { CLASSES, SUBJECTS } from '../../utils/constants';
 
@@ -327,7 +327,7 @@ const TeacherDashboard = () => {
             <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg bg-slate-200">
               {profile?.profilePicture ? (
                 <img
-                  src={`http://localhost:5000${profile.profilePicture}`}
+                  src={`${BASE_URL}${profile.profilePicture}`}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />

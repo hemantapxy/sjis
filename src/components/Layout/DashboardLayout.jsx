@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { authAPI } from '../../services/api';
+import { authAPI, BASE_URL } from '../../services/api';
 import Footer from './Footer';
 
 const DashboardLayout = ({ title, subtitle, children }) => {
@@ -69,7 +69,7 @@ const DashboardLayout = ({ title, subtitle, children }) => {
                                 >
                                     {user.profilePicture ? (
                                         <img
-                                            src={user.profilePicture.startsWith('http') ? user.profilePicture : `http://localhost:5000${user.profilePicture}`}
+                                            src={user.profilePicture.startsWith('http') ? user.profilePicture : `${BASE_URL}${user.profilePicture}`}
                                             alt="Profile"
                                             className="w-full h-full object-cover"
                                         />

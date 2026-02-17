@@ -94,7 +94,7 @@ const Footer = () => {
                                 { name: 'News & Events', path: '/connect#news' },
                                 { name: 'Media Gallery', path: '/connect#gallery' },
                                 { name: 'Radio Orange', path: '/connect#radio' },
-                                { name: 'SAI TV', path: '/connect#tv' },
+                                { name: 'SJIS TV', path: '/connect#tv' },
                                 { name: 'Contact Us', path: '/contact' }
                             ].map(item => (
                                 <li key={item.name}>
