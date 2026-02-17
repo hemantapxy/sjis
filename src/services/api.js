@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Backend URL for production
 export const BASE_URL = 'https://sjis-backend.onrender.com';
 const API_URL = `${BASE_URL}/api`;
 
